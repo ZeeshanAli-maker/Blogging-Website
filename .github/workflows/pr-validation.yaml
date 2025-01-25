@@ -11,8 +11,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Linting HTML and CSS files
         run: |
-          npx htmlhint "*/.html"
-          npx stylelint "*/.css"
+          npx htmlhint "**/*.html"
+          npx stylelint "**/*.css"
   Build:
     runs-on: ubuntu-latest
     steps:
@@ -20,4 +20,4 @@ jobs:
         uses: actions/checkout@v4
       - name: Build Website
         run: |
-          npx parcel build "./src/home.html" --dist-dir "./dist" --public-url "./"
+          npx parcel build "./src/index.html" --dist-dir "./dist" --public-url "./"
