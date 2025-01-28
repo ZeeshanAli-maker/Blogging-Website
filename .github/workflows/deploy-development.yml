@@ -17,12 +17,14 @@ jobs:
         with:
           name: "develop-artifact"
           path: "./dist"
-  Deploy:
+  deploy:
     needs: build
     permissions:
       pages: write
       id-token: write
-    environment: "development-env"
+      
+    environment: 
+      name: github-pages
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Website on GitHub pages
